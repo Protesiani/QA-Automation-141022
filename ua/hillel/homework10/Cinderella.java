@@ -2,7 +2,7 @@ package ua.hillel.homework10;
 
 import java.util.ArrayList;
 import java.util.Random;
-
+//added something
 public class Cinderella {
     public static void main(String[] args) {
 
