@@ -17,17 +17,17 @@ public class Cinderella {
         }
         System.out.println("All numbers " + collection);
         for (int number : collection) {
-            if (number % 2 == 0 && number % 3 == 0) {
+            if (number % 2 == 0) {
                 basket1.add(number);
-            } else if (number % 5 == 0) {
+            } else if (number % 5 == 0 && number % 3 != 0) {
                 basket2.add(number);
-            } else if (number % 2 != 0) {
+            } else if (number % 2 != 0 && number % 5 != 0) {
                 basket3.add(number);
             }
         }
-        System.out.println("Number in the first basket " + basket1);
-        System.out.println("Number in the second basket " + basket2);
-        System.out.println("Number in the in the third basket " + basket3);
+        System.out.println("Number in the first basket: " + basket1);
+        System.out.println("Number in the second basket: " + basket2);
+        System.out.println("Number in the in the third basket: " + basket3);
     }
 
 }
