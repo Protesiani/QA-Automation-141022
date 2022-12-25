@@ -2,7 +2,7 @@ package ua.hillel.homework10;
 
 import java.util.ArrayList;
 import java.util.Random;
-//added something
+
 public class Cinderella {
     public static void main(String[] args) {
 
@@ -17,10 +17,10 @@ public class Cinderella {
         }
         System.out.println("All numbers " + collection);
         for (int number : collection) {
-            if (number % 2 == 0 && number % 5 == 0) {
+            if (number % 2 == 0 && number % 3 == 0) {
                 basket1.add(number);
                 basket2.add(number);
-            } else if (number % 5 == 0) {
+            } else if (number % 3 == 0) {
                 basket2.add(number);
             } else if (number % 2 == 0) {
                 basket1.add(number);
