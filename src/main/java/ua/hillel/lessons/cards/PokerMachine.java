@@ -26,30 +26,33 @@ public class PokerMachine {
         for (int i = 0; i < 100; i++) {
             int in = random.nextInt(52);
             int out = random.nextInt(52);
-            Card tmpCard = deck.getCard(in);
-            deck.setCard(in, deck.getCard(out));
+            Card tmpCard = deck.viewCard(in);
+            deck.setCard(in, deck.viewCard(out));
             deck.setCard(out, tmpCard);
         }
     }
     public void serveCardsToPlayer( int noOfPlayers, Deck deck) throws NotEnoughPlayerException {
-        int index = 0;
+        if (!((noOfPlayers < 8) & (noOfPlayers > 2)))
+            throw new NotEnoughPlayerException("Not enough player. Player should be from 2 to 8");
+        Hand[] hands =  new Hand[noOfPlayers];
+
+            int index = 0;
         for (int round = 1; round <= 5; round++) {
             System.out.println("Round " + round);
-            if ((noOfPlayers<8)&(noOfPlayers>2)) {
-                for (int player = 1; player <= noOfPlayers; player++) {
-                    Card card = deck.getCard(index++);
-                    try{
-                        if (card.getValue().equals("Ace") & (card.getSuit().equals("Spades"))) {
-                            throw new JokerException("Can't use Joker");
-                        }
-                    } catch (JokerException jokerException) {
-                        System.out.println("Inside catch jokerException");
-                        jokerException.printStackTrace();
+            for (int player = 1; player <= noOfPlayers; player++) {
+                Card card = deck.viewCard(index++);
+                hands[player-1].addCard(card);
+                try{
+                    if (card.getValue().equals("Ace") & (card.getSuit().equals("Spades"))) {
+                        throw new JokerException("Can't use Joker");
                     }
-                    System.out.println(String.format("Player %d gets card %s%n", player, deck.getCard(index++)));
+                } catch (JokerException jokerException) {
+                    System.out.println("Inside catch jokerException");
+                    jokerException.printStackTrace();
                 }
-            } else throw new NotEnoughPlayerException("Not enough player. Player should be from 2 to 8");
+                System.out.println(String.format("Player %d gets card %s%n", player, deck.takeCard(index++)));
+            }
         }
-        System.out.println("");
+        System.out.println(String.format("%d cards left in deck", deck.currentSize()));
     }
    }
