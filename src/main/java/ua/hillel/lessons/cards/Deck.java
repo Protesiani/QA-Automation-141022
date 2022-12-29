@@ -2,11 +2,19 @@ package src.main.java.ua.hillel.lessons.cards;
 
 public class Deck {
 
-    private final int noOfCards = 52;
+    private static final int noOfCards = 52;
 
-    private final Card[] deck = new Card[noOfCards];
+    private final Card[] deck;
     private int inIndex = 0;
     private final int outIndex = 0;
+
+    public Deck(int customNoOfCards) {
+        this.deck = new Card[customNoOfCards];
+    }
+
+    public Deck() {
+        this(noOfCards);
+    }
 
     public void addCard(Card card){
         if (!(inIndex >= noOfCards)) {
