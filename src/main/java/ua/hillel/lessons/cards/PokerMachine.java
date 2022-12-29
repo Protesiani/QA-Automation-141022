@@ -35,6 +35,10 @@ public class PokerMachine {
         if (!((noOfPlayers < 8) & (noOfPlayers > 2)))
             throw new NotEnoughPlayerException("Not enough player. Player should be from 2 to 8");
         Hand[] hands =  new Hand[noOfPlayers];
+        for (int player = 0; player < noOfPlayers; player++) {
+            Hand hand =  new Hand();
+            hands[player] = hand;
+        }
 
             int index = 0;
         for (int round = 1; round <= 5; round++) {
