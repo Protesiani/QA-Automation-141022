@@ -58,5 +58,6 @@ public class PokerMachine {
             }
         }
         System.out.println(String.format("%d cards left in deck", deck.currentSize()));
+        hands[0].viewHand();
     }
    }
