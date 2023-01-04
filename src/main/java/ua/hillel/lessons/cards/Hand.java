@@ -1,23 +1,38 @@
 package src.main.java.ua.hillel.lessons.cards;
 
-public class Hand {
+public class Hand extends BasePoker {
 
-    private final Card[] cards =  new Card[52];
+    private int inIndex = getInIndex(); //Size of deck
+    private final Card[] cardsOnHand = new Card[getNoOfCards()]; //Object "Card" Quantity of cards
 
-    public Hand() {
+    public Card[] getCards() {
+        return cardsOnHand;
     }
 
+    @Override
     public int currentSize() {
         return inIndex;
-    }
-    public void addCard(Card card){
-        cards[inIndex++] = card;
+    } //Size of deck
+
+    public Hand() {
+    } //Constructor class
+
+    @Override
+    public void addCard(Card card) { //addCart
+        cardsOnHand[inIndex++] = card;
     }
 
-    public void viewHand() {
+    public Card[] viewHand() { //viewHand
         for (int i = 0; i < inIndex; i++) {
-            System.out.println(String.format("Player has card %s%n", cards[i]));
+            System.out.print(String.format("Player has card %s; ", cardsOnHand[i]));
+        }
+        return cardsOnHand;
+    }
+
+    public void viewArrayHands() {
+        for (int i2 = 0; i2 < inIndex; i2++) {
+            System.out.print(cardsOnHand[i2]);
         }
     }
-    private int inIndex = 0;
+
 }
