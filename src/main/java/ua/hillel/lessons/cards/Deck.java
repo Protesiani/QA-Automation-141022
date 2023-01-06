@@ -1,10 +1,14 @@
 package src.main.java.ua.hillel.lessons.cards;
 
-public class Deck {
+public class Deck extends BaseClassDeckHand {
 
     private static final int noOfCards = 52;
 
     private final Card[] deck;
+
+    public Card[] getCards() {
+        return deck;
+    }
 
     public int currentSize() {
         return inIndex;
