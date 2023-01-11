@@ -4,20 +4,23 @@ public class Card {
     private String value;
     private String suit;
 
-    public  Card (String value, String suit) {
+    public Card(String value, String suit) {
         this.value = value;
-        this. suit = suit;
+        this.suit = suit;
     }
 
     public String getValue() {
         return value;
     }
 
-    public  String getSuit() {
+    public String getSuit() {
         return suit;
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         return this.value + " of " + this.suit;
     }
+
+
 }

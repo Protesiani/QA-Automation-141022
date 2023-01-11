@@ -1,10 +1,14 @@
 package src.main.java.ua.hillel.lessons.cards;
 
-public class Deck {
+public class Deck extends BaseClassDeckHand {
 
     private static final int noOfCards = 52;
 
     private final Card[] deck;
+
+    public Card[] getCards() {
+        return deck;
+    }
 
     public int currentSize() {
         return inIndex;
@@ -21,7 +25,7 @@ public class Deck {
         this(noOfCards);
     }
 
-    public void addCard(Card card){
+    public void addCard(Card card) {
         if (!(inIndex >= noOfCards)) {
             deck[inIndex++] = card;
         }
@@ -38,7 +42,26 @@ public class Deck {
         return card;
     }
 
-    public void  setCard(int index, Card card) {
+    public void setCard(int index, Card card) {
         deck[index] = card;
+    }
+
+    @Override
+    public int findCards(Card finedCard) {
+        int count = 0;
+        int index = 0;
+        for (int i = 0; i < noOfCards; i++) {
+            if (deck[i].toString().equals(finedCard.toString())) {
+                count++;
+                index = i;
+            }
+        }
+        if (count > 0) {
+            System.out.println("Card " + finedCard.getValue() + " " + finedCard.getSuit() + " with index " + index + " fined");
+        } else {
+            System.out.println("Card hasn`t fined");
+            count = -1;
+        }
+        return count;
     }
 }
