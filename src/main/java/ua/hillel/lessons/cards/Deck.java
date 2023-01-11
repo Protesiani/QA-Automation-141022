@@ -47,7 +47,7 @@ public class Deck extends BaseClassDeckHand {
     }
 
     @Override
-    public int findCards2(Card finedCard) {
+    public int findCards(Card finedCard) {
         int count = 0;
         int index = 0;
         for (int i = 0; i < noOfCards; i++) {

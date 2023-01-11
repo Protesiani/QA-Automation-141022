@@ -4,7 +4,6 @@ public class Hand extends BaseClassDeckHand {
 
     private final Card[] cards = new Card[52];
 
-
     public Card[] getCards() {
         return cards;
     }
@@ -20,7 +19,6 @@ public class Hand extends BaseClassDeckHand {
         cards[inIndex++] = card;
     }
 
-
     public Card viewCard(int player) {
         for (int i = 0; i < inIndex; i++) {
             System.out.println(String.format("Player " + (player + 1) + " has card %s%n", cards[i]));
@@ -30,8 +28,7 @@ public class Hand extends BaseClassDeckHand {
 
     private int inIndex = 0;
 
-
-    public int findCards2(Card finedCard) {
+    public int findCards(Card finedCard) {
         int count = 0;
         int index = 0;
         for (int i = 0; i < 5; i++) {

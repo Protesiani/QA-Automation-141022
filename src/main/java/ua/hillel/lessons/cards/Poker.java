@@ -6,7 +6,7 @@ public class Poker {
         PokerMachine machine = new PokerMachine();
         Deck deck = machine.createDeck();
         machine.shuffleDeck(deck);
-        deck.findCards2(new Card("Queen","Spades"));
+        deck.findCards(new Card("Queen","Spades"));
         machine.serveCardsToPlayer(3, deck);
     }
 }

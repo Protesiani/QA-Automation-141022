@@ -7,12 +7,10 @@ public class PokerMachine {
     public Deck createDeck() throws NotFullDeckException, IllegalArgumentException, NullPointerException {
         String[] suites = {"Hearts", "Clubs", "Diamonds", "Spades"};
         String[] values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
-
         Deck deck = new Deck();
         if (!((suites.length == 4) & (values.length == 13))) {
             throw new NotFullDeckException(" Not full deck");
         }
-
         for (String suit : suites) {
             for (String value : values) {
                 deck.addCard(new Card(value, suit));
@@ -40,9 +38,8 @@ public class PokerMachine {
             Hand hand = new Hand();
             hands[player] = hand;
         }
-
         int index = 0;
-        int quantityRounds=5;
+        int quantityRounds = 5;
         for (int round = 1; round <= quantityRounds; round++) {
             System.out.println("Round " + round);
             for (int player = 1; player <= noOfPlayers; player++) {
@@ -60,10 +57,9 @@ public class PokerMachine {
                 index++;
             }
         }
-
         System.out.println(String.format("%d cards left in deck", deck.currentSize()));
         hands[2].viewCard(2);
-        hands[2].findCards2(new Card("Queen","Spades"));
+        hands[2].findCards(new Card("Queen", "Spades"));
 
     }
 }

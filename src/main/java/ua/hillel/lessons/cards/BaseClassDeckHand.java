@@ -4,7 +4,7 @@ abstract class BaseClassDeckHand {
     public int NumbersOfCard;
     public Card[] finedCard;
 
-    public int findCards2(Card finedCard) {
+    public int findCards(Card finedCard) {
         int count = 0;
         int index = 0;
         for (int i = 0; i < NumbersOfCard; i++) {
@@ -25,7 +25,9 @@ abstract class BaseClassDeckHand {
     abstract void addCard(Card card);
 
     abstract Card viewCard(int player);
-    abstract  int currentSize();
+
+    abstract int currentSize();
+
     abstract Card[] getCards();
 
 }
