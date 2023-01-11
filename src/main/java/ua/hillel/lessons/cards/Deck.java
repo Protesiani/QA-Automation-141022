@@ -25,7 +25,7 @@ public class Deck extends BaseClassDeckHand {
         this(noOfCards);
     }
 
-    public void addCard(Card card){
+    public void addCard(Card card) {
         if (!(inIndex >= noOfCards)) {
             deck[inIndex++] = card;
         }
@@ -42,7 +42,26 @@ public class Deck extends BaseClassDeckHand {
         return card;
     }
 
-    public void  setCard(int index, Card card) {
+    public void setCard(int index, Card card) {
         deck[index] = card;
+    }
+
+    @Override
+    public int findCards2(Card finedCard) {
+        int count = 0;
+        int index = 0;
+        for (int i = 0; i < noOfCards; i++) {
+            if (deck[i].toString().equals(finedCard.toString())) {
+                count++;
+                index = i;
+            }
+        }
+        if (count > 0) {
+            System.out.println("Card " + finedCard.getValue() + " " + finedCard.getSuit() + " with index " + index + " fined");
+        } else {
+            System.out.println("Card hasn`t fined");
+            count = -1;
+        }
+        return count;
     }
 }

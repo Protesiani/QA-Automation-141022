@@ -60,8 +60,10 @@ public class PokerMachine {
                 index++;
             }
         }
+
         System.out.println(String.format("%d cards left in deck", deck.currentSize()));
         hands[2].viewCard(2);
-        hands[0].findCards("Queen", "Spades", hands[0].getCards(), quantityRounds);
+        hands[2].findCards2(new Card("Queen","Spades"));
+
     }
 }
