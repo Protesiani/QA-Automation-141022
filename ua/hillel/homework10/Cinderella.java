@@ -19,12 +19,9 @@ public class Cinderella {
         for (int number : collection) {
             if (number % 2 == 0 && number % 3 == 0) {
                 basket1.add(number);
+            } else if (number % 5 == 0) {
                 basket2.add(number);
-            } else if (number % 3 == 0) {
-                basket2.add(number);
-            } else if (number % 2 == 0) {
-                basket1.add(number);
-            } else {
+            } else if (number % 2 != 0) {
                 basket3.add(number);
             }
         }
