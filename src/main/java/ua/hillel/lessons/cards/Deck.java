@@ -1,29 +1,20 @@
 package src.main.java.ua.hillel.lessons.cards;
 
-public class Deck {
+public class Deck extends CardsHolder {
 
     private static final int noOfCards = 52;
-
-    private final Card[] deck;
 
     public int currentSize() {
         return inIndex;
     }
 
-    private int inIndex = 0;
-    private final int outIndex = 0;
-
-    public Deck(int customNoOfCards) {
-        this.deck = new Card[customNoOfCards];
-    }
-
     public Deck() {
-        this(noOfCards);
+        super(noOfCards);
     }
 
     public void addCard(Card card){
         if (!(inIndex >= noOfCards)) {
-            deck[inIndex++] = card;
+            super.addCard(card);
         }
     }
 
