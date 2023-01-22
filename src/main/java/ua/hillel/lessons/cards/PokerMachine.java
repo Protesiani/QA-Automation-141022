@@ -59,5 +59,8 @@ public class PokerMachine {
         }
         System.out.println(String.format("%d cards left in deck", deck.currentSize()));
         hands[0].viewHand();
+
+        var position = hands[noOfPlayers-1].findCard(new Card("Queen", "Spades"));
+        System.out.println("Last player has Spades Queen at: "+position);
     }
    }
