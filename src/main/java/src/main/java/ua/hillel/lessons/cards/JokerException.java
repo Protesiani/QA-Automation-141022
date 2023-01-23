@@ -5,4 +5,5 @@ public class JokerException extends Throwable {
     public JokerException(String joker) {
         super(joker);
     }
+
 }

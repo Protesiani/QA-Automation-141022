@@ -5,4 +5,5 @@ public class NotFullDeckException extends Throwable {
     public NotFullDeckException(String nfd) {
         super(nfd);
     }
+
 }
